@@ -1,0 +1,43 @@
+body{
+    background: #292e3c;
+    font-family: inter;
+    margin: 0;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 89vh;
+}
+
+.test{
+    font-family: inter;
+    font-weight: 700;
+    font-size: 57px;
+    color: #1d9a6c;
+}
+
+.bold{
+    font-size: 277px;
+    color: #1d9a6c;
+    margin-bottom: -45px;
+}
+
+.white{
+    font-family: inter;
+    font-weight: 500;
+    font-size: 31px;
+    color: #ffffff;
+}
+
+a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a:hover{
+    color: rgb(69, 69, 255);
+}
