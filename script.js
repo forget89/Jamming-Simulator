@@ -12,6 +12,12 @@ const x = d3.scaleTime()
 const y = d3.scaleLinear()
   .range([height, 0]);
 
+
+// Create the line generator
+
+const line = d3.line()
+  .x(d => x(d.date))
+  .y(d => y(d.population));
 // Create the SVG element and append it to the chart container
 
 const svg = d3.select("#chart-container")
@@ -20,6 +26,12 @@ const svg = d3.select("#chart-container")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
+
+// create tooltip div
+
+const tooltip = d3.select("#testtooltip")
+  .append("div")
+  .attr("class", "tooltip");
 
 // Create a fake data
 
@@ -101,11 +113,7 @@ svg.selectAll("yGrid")
 .attr("stroke-width", .1)
 
 
-// Create the line generator
 
-const line = d3.line()
-  .x(d => x(d.date))
-  .y(d => y(d.population));
 
 // Add the line path to the SVG element
 
@@ -116,6 +124,67 @@ svg.append("path")
   .attr("stroke-width", 1)
   .attr("d", line);
 
+
+// Add a circle element
+
+const circle = svg.append("circle")
+ .attr("r", 0)
+ .attr("fill", "green")
+ .style("stroke", "white")
+ .attr("opacity", .70)
+ .style("pointer-events", "none");
+
+
+
+const listeningRect = svg.append("rect")
+ .attr("width", width)
+ .attr("height", height);
+
+
+// nasha mouse 
+
+ listeningRect.on("mousemove", function (event) {
+  const [xCoord] = d3.pointer(event, this);
+  const bisectDate = d3.bisector(d => d.date).left;
+  const x0 = x.invert(xCoord);
+  const i = bisectDate(data, x0, 1);
+  const d0 = data[i - 1];
+  const d1 = data[i];
+  const d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+  const xPos = x(d.date);
+  const yPos = y(d.population);
+
+// update circle
+
+circle.attr("cx", xPos)
+      .attr("cy", yPos);
+
+      // console.log(xPos)
+ })
+//////
+ circle.transition()
+      .duration(50)
+      .attr("r", 5);
+
+    // add in  our tooltip
+
+    tooltip
+      .style("display", "block")
+      .style("left", `${xPos + 100}px`)
+      .style("top", `${yPos + 50}px`)
+      .html(`<strong>Date:</strong> ${d.date.toLocaleDateString()}<br><strong>Population:</strong> ${d.population !== undefined ? (d.population / 1000).toFixed(0) + 'k' : 'N/A'}`)
+  });
+  // listening rectangle mouse leave function
+
+  listeningRect.on("mouseleave", function () {
+    circle.transition()
+      .duration(50)
+      .attr("r", 0);
+
+    tooltip.style("display", "none");
+  });
+  
+  
 // // Add Y-axis label
 
 svg.append("text")
@@ -149,7 +218,6 @@ svg.append("text")
 .style("font-size", "24px")
 .style("font-weight", "bold")
 .style("font-family", "inter")
-.text("Тестовый график для обучения(график численности заключенных)")
+.text("Тестовый график для обучения(график численности заключенных)");
 
-})
 
