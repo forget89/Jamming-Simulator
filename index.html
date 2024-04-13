@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/mainPage/styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <script src="https://d3js.org/d3.v4.min.js"></script>  
+
     <title>Симулятор глушения</title>
 </head>
 <body>
@@ -274,8 +274,10 @@
                     <p class="info-spec">1,12 г/см³</p>
                 </div>
             </div>
-            <section style="color: rgba(240, 248, 255, 0.39); height: 600px; background-color: #363A47; margin-top: 25px;">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam, assumenda amet facilis sunt voluptas laudantium incidunt debitis cum, architecto ea corporis, sit beatae eum impedit laboriosam quas blanditiis obcaecati illum id nesciunt quos sed porro. Odio quia eligendi explicabo eaque necessitatibus cum voluptate voluptas repellendus odit tempora, exercitationem assumenda debitis totam, a aliquam perferendis blanditiis qui dolorem placeat delectus? Dolorum nemo quis earum culpa quia sit, molestiae porro. Animi nam eligendi numquam dolores aspernatur doloremque itaque consequuntur aut cupiditate perferendis, velit dolorum repellendus neque alias, id corporis beatae ab iure, quaerat excepturi. Unde odit similique facere recusandae beatae odio quos?
+            <section style="color: rgba(240, 248, 255, 0.39); height: 600px; background-color: #363A47; margin-top: 25px;"> <!--style="color: rgba(240, 248, 255, 0.39); height: 600px; background-color: #363A47; margin-top: 25px;"-->
+                <div id="chart-container"></div>
+                <script src="https://d3js.org/d3.v7.min.js"></script>
+                <script src="/script.js"></script> 
             </section>
             <section>
                 <div class="content__tabs-second">
@@ -638,6 +640,6 @@
 
         </section>
     </main>
-    <script src="/mainPage/script.js"></script>
+
 </body>
 </html>
