@@ -1,10 +1,18 @@
 .mainContainer{
     display: flex;
     flex-direction: row;
-    margin-right: 25px;
+    /* margin-right: 25px;
     margin-top: 27px;
     margin-bottom: 16px;
-    margin-left: 75px;
+    margin-left: 75px; */
+}
+
+.container__tab {
+    max-width: 800px;
+    padding: 0 25px 0;
+    border-right: solid rgba(255, 255, 255, 0.08) 2px;
+    display: flex;
+    flex-direction: column;
 }
 
 .headerContainer{
