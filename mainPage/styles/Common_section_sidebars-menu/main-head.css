@@ -58,3 +58,10 @@ a:-webkit-any-link {
 .rightContent-third{
     padding: 8px;
 }
+
+
+.main-Body {
+    min-height: calc(100vh - 50px);
+    display: grid;
+    grid-template-columns: auto 1fr;
+}

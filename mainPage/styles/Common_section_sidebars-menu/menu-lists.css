@@ -1,7 +1,7 @@
 .menu{
-    position: absolute;
+    /* position: absolute; */
     background: rgb(38, 65, 63);
-    height: 92vh;
+    /* height: 92vh; */
     padding: 15px;
     display: flex;
     flex-direction: column;
