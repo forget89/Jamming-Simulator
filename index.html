@@ -16,9 +16,6 @@
             <div class="leftContent-second">/ План операций</div>
         </div>
         <div class="main-Header__rightContent">
-            <div class="rightContent-first">Share</div>
-            <div class="rightContent-second">Switch</div>
-            <div class="rightContent-third">Ru</div>
             <a class="rightContent-fourth" href="/loginPage/login.html" style="text-decoration: none; color: rgba(255, 255, 255, 0.87);">Login</a>
         </div>
     </header>
@@ -84,172 +81,439 @@
             </div>
         </aside>
     <main class="mainContainer">
-        <section class="container__tab" style="width: 800px; padding: 0 25px 0; border-right: solid rgba(255, 255, 255, 0.08) 2px; "> <!--РАСМОТРЕТЬ ДАННЫЙ ВОПРОС -->
+        <section class="container__tab"> <!--РАСМОТРЕТЬ ДАННЫЙ ВОПРОС -->
         <div class="headerContainer">
             <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.995117 0C0.64994 0 0.370117 0.279822 0.370117 0.625V9.375C0.370117 9.72018 0.64994 10 0.995117 10C1.34029 10 1.62012 9.72018 1.62012 9.375V0.625C1.62012 0.279822 1.34029 0 0.995117 0ZM2.90673 5.8005L5.05318 7.94695C5.29725 8.19102 5.69298 8.19102 5.93706 7.94695C6.18114 7.70287 6.18114 7.30714 5.93706 7.06306L4.504 5.63H10.9951C11.3403 5.63 11.6201 5.35018 11.6201 5.005C11.6201 4.65983 11.3403 4.38 10.9951 4.38H4.504L5.93706 2.94695C6.18114 2.70287 6.18114 2.30714 5.93706 2.06306C5.69298 1.81899 5.29725 1.81899 5.05318 2.06306L2.90673 4.20951C2.46739 4.64885 2.46739 5.36116 2.90673 5.8005Z" fill="white" fill-opacity="0.87"/>
             </svg>
             <h1>Входные данные</h1>
         </div>
-            <!-- <div class="content__tabs-first">
-                <div class="tabs-first">
-                    <nav class="tabs-first__items">
-                        <a href="#tab_11" class="tabs-first__item" style="text-decoration: none;"><span>Общие данные</span></a>
-                        <a href="#tab_12" class="tabs-first__item" style="text-decoration: none;"><span>Колонна скважины</span></a>
-                        <a href="#tab_13" class="tabs-first__item" style="text-decoration: none;"><span>НКТ и Штанги</span></a>
-                        <a href="#tab_14" class="tabs-first__item" style="text-decoration: none;"><span>Параметры агрегатов</span></a>
-                    </nav>
-                    <div class="tabs-first__body">
-                        <div id="tab_11" class="tabs-first__block">
-                            <p style="margin: 0 0 10px">Общие данные</p>
-                                <section>
-                                    <table style="width: 100%;">
-                                        <tr style="background: #363A47; ">
+        <!-- ТАБЫ -->
+
+            <div id="app"></div>
+                <div class="tabs-wrapper">
+                    <div class="tabs">
+                        <span class="tab">Общие данные</span>
+                        <span class="tab">Колонна и скважина</span>
+                        <span class="tab">НКТ и Штанги</span>
+                        <span class="tab">Способ закачки</span>
+                    </div>
+                    <div class="tabs-items">
+                        <div class="item">
+                            <p>Общие данные</p> 
+                                <div class="item__tables">
+                                    <table>
+                                        <tr style="background: #363A47;">
                                             <td>
                                                 Месторождение
                                             </td>
                                             <td>
-                                                Месторождение 1
+                                                <p id="field">Месторождение</p>  
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr style="background: #292e3c;">
                                             <td>
                                                 Куст
                                             </td>
                                             <td>
-                                                Куст 1
+                                                <p id="bush">Куст</p>   
                                             </td>
                                         </tr>
-                                        <tr style="background: #363A47;">
+                                        <tr style="background: #363A47; ">
                                             <td>
                                                 Скважина
                                             </td>
                                             <td>
-                                                Скважина 1
+                                                <p id="well">Скважина</p> 
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr style="background: #292e3c;">
+                                            <td>
+                                                Название дизайна
+                                            </td>
+                                            <td>
+                                                <p id="design">Дизайн</p>
+                                            </td>
+                                        </tr>
+                                        <tr style="background: #363A47; ">
                                             <td>
                                                 Способ эксплуатации
                                             </td>
                                             <td>
-                                                <select name="1" style="width: 120px; background: #292e3c; border: none; color: rgba(255, 255, 255, 0.64);">
-                                                    <option value="1">УЭЦН</option>
-                                                    <option value="2">УШГН</option>
+                                                <select style="background: #363A47;">
+                                                    <option id="UECN" value="1">УЭЦН</option>
+                                                    <option id="USHGN" value="2">УШГН</option>
                                                 </select>
                                             </td>
                                         </tr>
-                                        <tr style="background: #363A47;">
+                                        <tr style="background: #292e3c;">
+                                            <td>
+                                                Способ глушения
+                                            </td>
+                                            <td>
+                                                <select style="background: #292e3c;">
+                                                    <option id="NKT" value="1">НКТ</option>
+                                                    <option id="zatryb" value="2">Затруб</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr style="background: #363A47; ">
                                             <td>
                                                 Плотность нефти в поверхностных условиях, г/см³
                                             </td>
                                             <td>
-                                                <input type="text" name="1" style="width: 120px; background: #363A47; border: none; color: rgba(255, 255, 255, 0.64);">
+                                                <input id="density" type="text" style="background: #363A47;">
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr style="background: #292e3c;">
                                             <td>
-                                                Пластовое давление
+                                                Пластовое давление, атм
                                             </td>
                                             <td>
-                                                <input type="text" name="1" style="width: 120px; background: #292e3c; border: none; color: rgba(255, 255, 255, 0.64);">  
+                                                <input id="form-pressure" type="text" style="background: #292e3c;">
+                                            </td>
+                                        </tr>
+                                        <tr style="background: #363A47; ">
+                                            <td>
+                                                Максимальное устьевое давление, атм
+                                            </td>
+                                            <td>
+                                                <input id="max-pressure" type="text" style="background: #363A47;">
+                                            </td>
+                                        </tr>
+                                        <tr style="background: #292e3c;">
+                                            <td>
+                                                Кровля пласта по вертикали, м
+                                            </td>
+                                            <td>
+                                                <input id="roof-form" type="text" style="background: #292e3c;">
+                                            </td>
+                                        </tr>
+                                        <tr style="background: #363A47; ">
+                                            <td>
+                                                Подошва пласта по вертикали, м
+                                            </td>
+                                            <td>
+                                                <input id="sole-form" type="text" style="background: #363A47;">
+                                            </td>
+                                        </tr>
+                                        <tr style="background: #292e3c;">
+                                            <td>
+                                                Искусственный забой, м
+                                            </td>
+                                            <td>
+                                                <input id="artificial-bottom" type="text" style="background: #292e3c;">
+                                            </td>
+                                        </tr>
+                                        <tr style="background: #363A47; ">
+                                            <td>
+                                                Текущий забой, м
+                                            </td>
+                                            <td>
+                                                <input id="current-bottom" type="text" style="background: #363A47;">
+                                            </td>
+                                        </tr>
+                                        <tr style="background: #292e3c;">
+                                            <td>
+                                                Глубина контрольной точки по давлению, м
+                                            </td>
+                                            <td>
+                                                <input id="depth-pressure" type="text" style="background: #292e3c;">
                                             </td>
                                         </tr>
                                     </table>
-                                </section>
+                            </div>
                         </div>
-                        <div id="tab_12" class="tabs-first__block">
-                            <p style="margin: 0 0 10px">Колонна скважины</p>
+                        <div class="item">
+                            <p>Общие данные</p>
+                            <div class="item__tables">
+                                <table>
+                                    <tr style="background: #5C606A;">
+                                        <td>
+                                            №
+                                        </td>
+                                        <td style="padding-left: 5px;" title="единица измерения мм">
+                                            MD вверх
+                                        </td>
+                                        <td style="padding-left: 5px;" title="единица измерения мм">
+                                            MD низ
+                                        </td>
+                                        <td style="padding-left: 5px;" title="единица измерения мм">
+                                            TVD вверх
+                                        </td>
+                                        <td style="padding-left: 5px;" title="единица измерения мм">
+                                            TVD низ
+                                        </td>
+                                        <td style="padding-left: 5px;" title="единица измерения мм">
+                                            Внешний диаметр
+                                        </td>
+                                        <td style="padding-left: 5px;" title="единица измерения мм">
+                                            Толщина стенки
+                                        </td>
+                                    </tr>
+                                    <tr style="background: #292e3c;">
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="md-up-general_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="md-down-general_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="tvd-up-general_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="tvd-down-general_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="diameter-general_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="wall-thick-general_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                    </tr>
+                                    <tr style="background: #363A47;">
+                                        <td>
+                                            <p>2</p>
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="md-up-general_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="md-down-general_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="tvd-up-general_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="tvd-down-general_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="diameter-general_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                        <td style="padding-left: 5px;">
+                                            <input id="wall-thick-general_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- <p style="margin-top: 1em;">Траектория</p>   -->
+                            
                         </div>
-                        <div id="tab_13" class="tabs-first__block">
-                            <p style="margin: 0 0 10px">НКТ и Штанги</p>
+                        <div class="item">
+                            <p>НКТ</p> 
+                            <div class="item__tables">
+                                <table>
+                                    <tr style="background: #5C606A;">
+                                        <td>
+                                            №
+                                        </td>
+                                        <td  title="единица измерения мм">
+                                            MD вверх
+                                        </td>
+                                        <td  title="единица измерения мм">
+                                            MD низ
+                                        </td>
+                                        <td  title="единица измерения мм">
+                                            Внешний диаметр
+                                        </td>
+                                        <td  title="единица измерения мм">
+                                            Толщина стенки
+                                        </td>
+                                    </tr>
+                                    <tr style="background: #292e3c;">
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <input id="md-up-nkt_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                        <td >
+                                            <input id="md-down-nkt_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                        <td >
+                                            <input id="diameter-nkt_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                        <td >
+                                            <input id="wall-thick-nkt_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                    </tr>
+                                    <tr style="background: #363A47;">
+                                        <td>
+                                            <p>2</p>
+                                        </td>
+                                        <td >
+                                            <input id="md-up-nkt_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                        <td >
+                                            <input id="md-down-nkt_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                        <td >
+                                            <input id="diameter-nkt_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                        <td >
+                                            <input id="wall-thick-nkt_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p style="margin-top: 1em;">Штанги</p>
+                            <div class="item__tables">
+                                <table>
+                                    <tr style="background: #5C606A;">
+                                        <td>
+                                            №
+                                        </td>
+                                        <td  title="единица измерения мм">
+                                            MD вверх
+                                        </td>
+                                        <td  title="единица измерения мм">
+                                            MD низ
+                                        </td>
+                                        <td  title="единица измерения мм">
+                                            Внешний диаметр
+                                        </td>
+                                    </tr>
+                                    <tr style="background: #292e3c;">
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td >
+                                            <input id="md-up-rods_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                        <td >
+                                            <input id="md-down-rods_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                        <td >
+                                            <input id="diameter-rods_1" type="text" style="background: #292e3c; width: 50px;">
+                                        </td>
+                                    </tr>
+                                    <tr style="background: #363A47;">
+                                        <td>
+                                            <p>2</p>
+                                        </td>
+                                        <td >
+                                            <input id="md-up-rods_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                        <td >
+                                            <input id="md-down-rods_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                        <td >
+                                            <input id="diameter-rods_2" type="text" style="background: #363A47; width: 50px;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
-                        <div id="tab_14" class="tabs-first__block">
-                            <p style="margin: 0 0 10px">Параметры агрегатов</p>
-                            <section>
-                                <table style="width: 100%;">
+                        <div class="item">
+                            <p>Параметры агрегатов</p> 
+                            <div class="item__tables">
+                                <table>
                                     <tr style="background: #363A47;">
                                         <td>
                                             Объем емкости, м³
                                         </td>
                                         <td>
-                                            <input type="text" name="1" style="width: 120px; background: #363A47; border: none; color: rgba(255, 255, 255, 0.64);">
+                                            <input id="cap-volume" type="text" style="background: #363A47;">
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr style="background: #292e3c;">
                                         <td>
                                             Расход, м³/мин
                                         </td>
                                         <td>
-                                            <input type="text" name="1" style="width: 120px; background: #292e3c; border: none; color: rgba(255, 255, 255, 0.64);">
+                                            <input id="expense" type="text" style="background: #292e3c;">
                                         </td>
                                     </tr>
-                                    <tr style="background: #363A47;">
+                                    <tr style="background: #363A47; ">
                                         <td>
-                                            Плотность УВ, г/см³
+                                            Плотность углеводородной основы, г/м³
                                         </td>
                                         <td>
-                                            <input type="text" name="1" style="width: 120px; background: #363A47; border: none; color: rgba(255, 255, 255, 0.64);">
-                                        </td>
-                                    </tr>
-                                    <tr >
-                                        <td>
-                                            Доля УВ в объеме БП
-                                        </td>
-                                        <td>
-                                            <input type="text" name="1" style="width: 120px; background: #292e3c; border: none; color: rgba(255, 255, 255, 0.64);">  
+                                            <input id="density-hydro" type="text" style="background: #363A47;">
                                         </td>
                                     </tr>
-                                    <tr style="background: #363A47;">
+                                    <tr style="background: #292e3c;">
+                                        <td>
+                                            Доля углеводородной основы в объеме блок-пачки
+                                        </td>
+                                        <td>
+                                            <input id="density-fraction" type="text" style="background: #292e3c;">
+                                        </td>
+                                    </tr>
+                                    <tr style="background: #363A47; ">
                                         <td>
                                             Плотность эмульгатора, г/см³
                                         </td>
                                         <td>
-                                            <input type="text" name="1" style="width: 120px; background: #363A47; border: none; color: rgba(255, 255, 255, 0.64);">
+                                            <input id="density-emuls" type="text" style="background: #363A47;">
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr style="background: #292e3c;">
                                         <td>
-                                            Доля эмульгатора в объеме БП
+                                            Доля эмульгатора в объеме блок-пачки
                                         </td>
                                         <td>
-                                            <input type="text" name="1" style="width: 120px; background: #292e3c; border: none; color: rgba(255, 255, 255, 0.64);">  
+                                            <input id="emuls-fraction" type="text" style="background: #292e3c;">
                                         </td>
                                     </tr>
-                                    <tr style="background: #363A47;">
+                                    <tr style="background: #363A47; ">
                                         <td>
-                                            Глушение через
+                                            Тип соли
                                         </td>
                                         <td>
-                                            <select name="1" style="width: 120px; background: #363A47; border: none; color: rgba(255, 255, 255, 0.64);">
-                                                <option value="1">НКТ</option>
-                                                <option value="2">Затруб</option>
+                                            <select style="background: #363A47;">
+                                                <option id="cacl" value="1">CaCl</option>
+                                                <option id="kcl" value="2">KCl</option>
+                                                <option id="cajg" value="2">CaЖГ</option>
                                             </select>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr style="background: #292e3c;">
                                         <td>
-                                            При плотности ЖГ менее 1,16 г/см³ использовать
+                                            Буферная жидкость, м³
                                         </td>
                                         <td>
-                                            <select name="1" id="4" style="width: 120px; background: #292e3c; border: none; color: rgba(255, 255, 255, 0.64);">
-                                                <option value="1">CaCl</option>
-                                                <option value="2">KCl</option>
-                                            </select>
+                                            <input id="buffer-liquid" type="text" style="background: #292e3c;">
+                                        </td>
+                                    </tr>
+                                    <tr style="background: #363A47; ">
+                                        <td>
+                                            Тех. жидкость с добавками, м³
+                                        </td>
+                                        <td>
+                                            <input id="tech-liquid-add" type="text" style="background: #363A47;">
+                                        </td>
+                                    </tr>
+                                    <tr style="background: #292e3c;">
+                                        <td>
+                                            Тех. жидкость, м³
+                                        </td>
+                                        <td>
+                                            <input id="tech-liquid" type="text" style="background: #292e3c;">
+                                        </td>
+                                    </tr>
+                                    <tr style="background: #363A47; ">
+                                        <td>
+                                            Тех. жидкость для циркуляции, м³
+                                        </td>
+                                        <td>
+                                            <input id="tech-liquid-circulation" type="text" style="background: #363A47;">
                                         </td>
                                     </tr>
                                 </table>
-                            </section> -->
-                        <!-- </div>
-                        <footer class="tabs-first__footer-buttons"> РАСМОТРЕТЬ ДАННЫЙ ВОПРОС ПОЧЕМУ НЕ СНИЗУ
-                           <button>Произвести расчет</button>
-                           <button>Выгрузить отчет в MS Word</button> 
-                           <button>Выгрузить план приготовления ЖГ в MS Word</button> 
-                        </footer>
-                    </div>
-                </div>
-            </div> -->
+                            </div>
+                        </div> 
+                        </div>
+                        </div>
+            <footer class="tabs-first__footer-buttons">
+                <button>Произвести расчет</button>
+            </footer>
+        <!---->
         </section>
+
         <section style="width: 1250px; padding: 0 25px 0; border-right: solid rgba(255, 255, 255, 0.08) 2px; ">
             <header class="headerContainer">
                 <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -260,388 +524,397 @@
             <div class="headerContainer__info">
                 <div style="margin: 0;">
                     <p class="info-name">V обс. колонны</p>
-                    <p class="info-spec">3,12 м³</p>
+                    <p id="total-column-volume" class="info-spec">3,12 м³</p> <!--в коде нужно сокранить м3 чтобы только число менялось!!!-->
                 </div>
                 <div>
                     <p class="info-name">V НКТ</p>
-                    <p class="info-spec">4,2 м³</p>
+                    <p id="total-nkt-volume" class="info-spec">4,2 м³</p> <!--в коде нужно сокранить м3 чтобы только число менялось!!!-->
+                </div>
+                <div>
+                    <p class="info-name">Тип соли</p>
+                    <p id="total-salt-type" class="info-spec">KCl</p>
                 </div>
                 <div>
                     <p class="info-name">V жидкости глушения</p>
-                    <p class="info-spec">19,59 м³</p>
+                    <p id="total-jamming-liquid-volume" class="info-spec">19,59 м³</p> <!--в коде нужно сокранить м3 чтобы только число менялось!!!-->
                 </div>
                 <div>
                     <p class="info-name">Плотность жидкости глушения</p>
-                    <p class="info-spec">1,12 г/см³</p>
+                    <p id="total-liqiud-pressure" class="info-spec">1,12 г/см³</p> <!--в коде нужно сокранить г/см3 чтобы только число менялось!!!-->
                 </div>
             </div>
-            <section id="testtooltip" style="color: rgba(240, 248, 255, 0.39); height: 600px; background-color: #363A47; margin-top: 25px; border-radius: 8px;"> <!--style="color: rgba(240, 248, 255, 0.39); height: 600px; background-color: #363A47; margin-top: 25px;"-->
+            <section id="testtooltip" style="color: rgba(240, 248, 255, 0.39); background-color: #363A47; margin-top: 25px; border-radius: 8px;">
                 <div id="chart-container"></div>
-                <div id="tooltip"></div>
-                <script src="https://d3js.org/d3.v7.min.js"></script>
-                <script src="/script.js"></script> 
+                <!-- <div id="tooltip"></div> -->
             </section>
-            <section>
-                <div class="content__tabs-second">
-                    <div class="tabs-second"> 
-                        <nav class="tabs-second__items">
-                            <a href="#tab_21" class="tabs-second__item" style="text-decoration: none;"><span>Общие результаты</span></a>
-                            <a href="#tab_22" class="tabs-second__item" style="text-decoration: none;"><span>Расчет удельного веса раствора</span></a>
-                            <a href="#tab_23" class="tabs-second__item" style="text-decoration: none;"><span>Расчет объемов</span></a>
-                            <a href="#tab_24" class="tabs-second__item" style="text-decoration: none;"><span>Тип компонента</span></a>
-                            <a href="#tab_25" class="tabs-second__item" style="text-decoration: none;"><span>Тип жидкости</span></a>
-                        </nav>
-                        <div class="tabs-second__body">
-                            <div id="tab_21" class="tabs-second__block tabs__block2">
-                                <p style="margin: 0 0 10px">Общие результаты</p>
-                                    <section>
-                                        <table style="width: 100%;">
-                                            <tr style="background: #363A47; ">
-                                                <td>
-                                                    Объем нефти, м³
-                                                </td>
-                                                <td>
-                                                    3,45 <!--p id="" получаем данную-->
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Объем эмульгатора, м³
-                                                </td>
-                                                <td>
-                                                    0,86
-                                                </td>
-                                            </tr>
-                                            <tr style="background: #363A47;">
-                                                <td>
-                                                    Объем воды, м³
-                                                </td>
-                                                <td>
-                                                    15,75 <!--p id="" получаем данную-->
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Масса соли, т
-                                                </td>
-                                                <td>
-                                                   5,28
-                                                </td>
-                                            </tr>
-                                            <tr style="background: #363A47;">
-                                                <td>
-                                                    Объем солевого раствора, м³ 
-                                                </td>
-                                                <td>
-                                                    17,24
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Плотность солевого раствора, г/см³ 
-                                                </td>
-                                                <td>
-                                                    1,22
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </section>
-                            </div>
-                            <div id="tab_22" class="tabs-second__block">
-                                <p style="margin: 0 0 10px">Расчет удельного веса раствора</p>
-                                <section>
-                                    <table style="width: 100%;">
-                                        <tr style="background: #363A47; ">
-                                            <td>
-                                                Теоритическая плотность жидкости глушения, г/см³
-                                            </td>
-                                            <td>
-                                                1,09 <!--p id="" получаем данную-->
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Запас по давлению при глушении, атм
-                                            </td>
-                                            <td>
-                                                0,86
-                                            </td>
-                                        </tr>
-                                        <tr style="background: #363A47;">
-                                            <td>
-                                                Количество циклов, шт
-                                            </td>
-                                            <td>
-                                                15,75 <!--p id="" получаем данную-->
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Тип соли
-                                            </td>
-                                            <td>
-                                               CaCl
-                                            </td>
-                                        </tr>
-                                        <tr style="background: #363A47;">
-                                            <td>
-                                                Расход соли, кг/м³ 
-                                            </td>
-                                            <td>
-                                                306,0
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Расход воды, л/м³ 
-                                            </td>
-                                            <td>
-                                                913,6
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </section>
-                            </div>
-                            <div id="tab_23" class="tabs-second__block">
-                                <p style="margin: 0 0 10px">Расчет объемов</p>
-                                <section>
-                                    <table style="width: 100%;">
-                                        <tr style="background: #363A47; ">
-                                            <td>
-                                                Объем экп. колонны, м³
-                                            </td>
-                                            <td>
-                                                23,1 <!--p id="" получаем данную-->
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Объем НКТ, м³
-                                            </td>
-                                            <td>
-                                                0,86
-                                            </td>
-                                        </tr>
-                                        <tr style="background: #363A47;">
-                                            <td>
-                                                Объем штанг, м³
-                                            </td>
-                                            <td>
-                                                15,75 <!--p id="" получаем данную-->
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Объем затрубья в интервале устье-низ НКТ, м³
-                                            </td>
-                                            <td>
-                                               19,59
-                                            </td>
-                                        </tr>
-                                        <tr style="background: #363A47;">
-                                            <td>
-                                                Объем колонны в интервале низ НКТ-забой, м³
-                                            </td>
-                                            <td>
-                                                1,96
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Расчетный объем глушения, м³ 
-                                            </td>
-                                            <td>
-                                                913,6
-                                            </td>
-                                        </tr>
-                                        <tr style="background: #363A47;">
-                                            <td>
-                                                Запас жидкости - 10% от расчетного объема глушения, м³
-                                            </td>
-                                            <td>
-                                                1,96
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </section>
-                            </div>
-                            <div id="tab_24" class="tabs-second__block">
-                                <p style="margin: 0 0 10px">Тип компонента</p>
-                                <section>
-                                    <table style="width: 100%;">
-                                        <tr style="background: #363A47;">
-                                            <td>
-                                                УВ основа, м³
-                                            </td>
-                                            <td>
-                                                5,4
-                                            </td>
-                                            <td>
-                                                2,5
-                                            </td>
-                                            <td>
-                                                3,5
-                                            </td>
-                                            <td>
-                                                0,5
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Эмульгатор, м³
-                                            </td>
-                                            <td>
-                                                7,42
-                                            </td>
-                                            <td>
-                                                2,5
-                                            </td>
-                                            <td>
-                                                3,5
-                                            </td>
-                                            <td>
-                                                0,5
-                                            </td>
-                                        </tr>
-                                        <tr style="background: #363A47;">
-                                            <td>
-                                                Объем сол. раствора, м³
-                                            </td>
-                                            <td>
-                                                10,24
-                                            </td>
-                                            <td>
-                                                2,5
-                                            </td>
-                                            <td>
-                                                3,5
-                                            </td>
-                                            <td>
-                                                0,5
-                                            </td>
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                                Объем БП, м³
-                                            </td>
-                                            <td>
-                                                23,5
-                                            </td>
-                                            <td>
-                                                2,5
-                                            </td>
-                                            <td>
-                                                3,5
-                                            </td>
-                                            <td>
-                                                0,5
-                                            </td>
-                                        </tr>
-                                        
-                                    </table>
-                                </section>
-                            </div>
-                            <div id="tab_25" class="tabs-second__block">
-                                <p style="margin: 0 0 10px">Тип жидкости</p>
-                                <section>
-                                    <table style="width: 100%;">
-                                        <tr style="background: #363A47;">
-                                            <td>
-                                                Буферная жидкость
-                                            </td>
-                                            <td>
-                                                5,4
-                                            </td>
-                                            <td>
-                                                2,5
-                                            </td>
-                                            <td>
-                                                3,5
-                                            </td>
-                                            <td>
-                                                0,5
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Блокируещий состав
-                                            </td>
-                                            <td>
-                                                7,42
-                                            </td>
-                                            <td>
-                                                2,5
-                                            </td>
-                                            <td>
-                                                3,5
-                                            </td>
-                                            <td>
-                                                0,5
-                                            </td>
-                                        </tr>
-                                        <tr style="background: #363A47;">
-                                            <td>
-                                                Тех. жидкость с добавками
-                                            </td>
-                                            <td>
-                                                10,24
-                                            </td>
-                                            <td>
-                                                2,5
-                                            </td>
-                                            <td>
-                                                3,5
-                                            </td>
-                                            <td>
-                                                0,5
-                                            </td>
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                                Тех. жидкость
-                                            </td>
-                                            <td>
-                                                23,5
-                                            </td>
-                                            <td>
-                                                2,5
-                                            </td>
-                                            <td>
-                                                3,5
-                                            </td>
-                                            <td>
-                                                0,5
-                                            </td>
-                                        </tr>
-                                        <tr style="background: #363A47;">
-                                            <td>
-                                                Тех. жидкость для циркуляции
-                                            </td>
-                                            <td>
-                                                10,24
-                                            </td>
-                                            <td>
-                                                2,5
-                                            </td>
-                                            <td>
-                                                3,5
-                                            </td>
-                                            <td>
-                                                0,5
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </section>
-                            </div>
-                        </div>
+        <section>
+            <!-- ТАБЫ -->
+            <div class="tabs-wrapper">
+            <div class="tabs">
+            <span class="tab">Общие результаты</span>
+            <span class="tab">Расчет объемов</span>
+            <span class="tab">Рецептура блок-пачки</span>
+            <span class="tab">Сценарии закачки</span>
+            </div>
+            <div class="tabs-items">
+            <div class="item">
+                <p>Общие результаты</p>
+                <div class="item__tables">
+                    <table>
+                        <tr style="background: #363A47;">
+                            <td>
+                                Объем углеводородной основы, м³
+                            </td>
+                            <td>
+                                <p id="hydro-volume" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Объем эмульгатора, м³
+                            </td>
+                            <td>
+                                <p id="emuls_volume" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Объем воды, м³
+                            </td>
+                            <td>
+                                <p id="water-volume" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Масса соли, т
+                            </td>
+                            <td>
+                                <p id="salt-weight" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Объем солевого раствора, м³
+                            </td>
+                            <td>
+                                <p id="salt-solution-volume" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Плотность солевого раствора, г/м³
+                            </td>
+                            <td>
+                                <p id="salt-solution-density" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Запас по давлению при глушении, атм
+                            </td>
+                            <td>
+                                <p id="jamming-pressure" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Количество циклов, шт
+                            </td>
+                            <td>
+                                <p id="quantity-cycles" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Тип соли
+                            </td>
+                            <td>
+                                <p id="salt-type" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Расход соли, кг
+                            </td>
+                            <td>
+                                <p id="salt-expense" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Расход воды, л/м³
+                            </td>
+                            <td>
+                                <p id="water-expense" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                    </table>
+                </div> 
+            </div>
+            <div class="item">
+                <p>Расчет объемов</p> 
+                <div class="item__tables">
+                    <table>
+                        <tr style="background: #363A47;">
+                            <td>
+                                Объем экп. колонны, м³
+                            </td>
+                            <td>
+                                <p id="ekp-column-volume" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Объем НКТ, м³
+                            </td>
+                            <td>
+                                <p id="nkt-volume" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Объем штанг, м³
+                            </td>
+                            <td>
+                                <p id="rods-volume" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Объем затрубья в интервале устье-низ НКТ, м³
+                            </td>
+                            <td>
+                                <p id="annulus-volume" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Объем колонны в интервале низ НКТ-забой, м³
+                            </td>
+                            <td>
+                                <p id="column-volume" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Расчетный объем глушения, м³
+                            </td>
+                            <td>
+                                <p id="jamming-volume" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Запас жидкости - 10% от расчетного объема глушения, м³
+                            </td>
+                            <td>
+                                <p id="supp-liquid" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div> 
+            <div class="item">
+                <p>Рецептура блок-пачки</p>
+                <div class="item__tables">
+                    <table>
+                        <tr style="background: #5C606A;">
+                            <td>
+                                Тип жидкости, м³
+                            </td>
+                            <td>
+                                Объем, м³
+                            </td>
+                            <td>
+                                Скорость закачки, м³/мин
+                            </td>
+                            <td>
+                                Время закачки, мин
+                            </td>
+                            <td>
+                                Время перемешения, час
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Углеводородная основа, м³
+                            </td>
+                            <td>
+                                <p id="hydro-base_1" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="hydro-base_2" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="hydro-base_3" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="hydro-base_4" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Эмульгатор, м³
+                            </td>
+                            <td>
+                                <p id="emuls_1" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="emuls_2" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="emuls_3" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="emuls_4" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Объем сол. раствора, м³
+                            </td>
+                            <td>
+                                <p id="salt-volume_1" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="salt-volume_2" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="salt-volume_3" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="salt-volume_4" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Объем блок-пачки, м³
+                            </td>
+                            <td>
+                                <p id="block-volume_1" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="block-volume_2" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="block-volume_3" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="block-volume_4" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                    </table>
                     </div>
                 </div>
-            </section>
+            <div class="item">
+                <p>Сценарии закачки</p>
+                <div class="item__tables">
+                    <table>
+                        <tr style="background: #5C606A;">
+                            <td>
+                                Тип компонента
+                            </td>
+                            <td>
+                                Стадия №1
+                            </td>
+                            <td>
+                                Стадия №2
+                            </td>
+                            <td>
+                                Стадия №3
+                            </td>
+                            <td>
+                                Стадия №4
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Углеводородная основа, м³
+                            </td>
+                            <td>
+                                <p id="stage-hydro-base_1" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-hydro-base_2" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-hydro-base_3" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-hydro-base_4" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Эмульгатор, м³
+                            </td>
+                            <td>
+                                <p id="stage-emuls_1" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-emuls_2" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-emuls_3" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-emuls_4" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #292e3c;">
+                            <td>
+                                Объем сол. раствора, м³
+                            </td>
+                            <td>
+                                <p id="stage-salt-volume_1" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-salt-volume_2" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-salt-volume_3" style="background: #292e3c;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-salt-volume_4" style="background: #292e3c;"></p>
+                            </td>
+                        </tr>
+                        <tr style="background: #363A47; ">
+                            <td>
+                                Объем блок-пачки, м³
+                            </td>
+                            <td>
+                                <p id="stage-block-volume_1" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-block-volume_2" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-block-volume_3" style="background: #363A47;"></p>
+                            </td>
+                            <td>
+                                <p id="stage-block-volume_4" style="background: #363A47;"></p>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <!---->
         </section>
-        <section >
-
+        </section>
+        <section style="padding: 0 25px 0">
+            <div class="headerContainer">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.995117 0C0.64994 0 0.370117 0.279822 0.370117 0.625V9.375C0.370117 9.72018 0.64994 10 0.995117 10C1.34029 10 1.62012 9.72018 1.62012 9.375V0.625C1.62012 0.279822 1.34029 0 0.995117 0ZM2.90673 5.8005L5.05318 7.94695C5.29725 8.19102 5.69298 8.19102 5.93706 7.94695C6.18114 7.70287 6.18114 7.30714 5.93706 7.06306L4.504 5.63H10.9951C11.3403 5.63 11.6201 5.35018 11.6201 5.005C11.6201 4.65983 11.3403 4.38 10.9951 4.38H4.504L5.93706 2.94695C6.18114 2.70287 6.18114 2.30714 5.93706 2.06306C5.69298 1.81899 5.29725 1.81899 5.05318 2.06306L2.90673 4.20951C2.46739 4.64885 2.46739 5.36116 2.90673 5.8005Z" fill="white" fill-opacity="0.87"/>
+                </svg>
+                <h1>Конструкция</h1>
+            </div>
+            <img src="/mainPage/skvajina.jpg" width="120%">
         </section>
     </main>
-
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="/script.js" defer></script> 
 </body>
 </html>

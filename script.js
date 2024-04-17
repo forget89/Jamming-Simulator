@@ -1,3 +1,18 @@
+document.querySelectorAll('.tabs-wrapper').forEach((e) => {
+  let tabTabs = e.querySelectorAll('.tabs .tab');
+  let tabItems = e.querySelectorAll('.tabs-items .item');
+    for(let i =0;i<tabTabs.length;i++) {
+        tabTabs[0].click();
+         tabTabs[i].onclick = () => {
+          tabTabs.forEach((e)  => { e.classList.remove('on') }); 
+          tabItems.forEach((e)  => { e.classList.remove('on') });
+          tabTabs[i].classList.add('on');
+          tabItems[i].classList.add('on');
+     }
+   }
+ });
+
+
 // Set dimensions and margins for the chart
 
 const margin = { top: 70, right: 30, bottom: 40, left: 80 };
@@ -29,9 +44,9 @@ const svg = d3.select("#chart-container")
 
 // create tooltip div
 
-const tooltip = d3.select("#testtooltip")
-  .append("div")
-  .attr("class", "tooltip");
+// const tooltip = d3.select("#testtooltip")
+//   .append("div")
+//   .attr("class", "tooltip");
 
 // Create a fake data
 

@@ -7,6 +7,14 @@
     margin-left: 75px;
 }
 
+.container__tab{
+    max-width: 800px;
+    padding: 0 25px 0;
+    border-right: solid rgba(255, 255, 255, 0.08) 2px; 
+    display: flex;
+    flex-direction: column;
+}
+
 .headerContainer{
     position: static;
     height: 52px;
