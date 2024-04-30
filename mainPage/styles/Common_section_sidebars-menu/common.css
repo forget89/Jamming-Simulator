@@ -1,6 +1,7 @@
 body{
     background: #292e3c;
-    font-family: inter;
+    /* font-family: inter; */
     margin: 0;
+    padding: 0;
     height: 100%;
 } 
