@@ -1,3 +1,5 @@
+// tabs //
+
 document.querySelectorAll('.tabs-wrapper').forEach((e) => {
   let tabTabs = e.querySelectorAll('.tabs .tab');
   let tabItems = e.querySelectorAll('.tabs-items .item');
@@ -12,6 +14,8 @@ document.querySelectorAll('.tabs-wrapper').forEach((e) => {
    }
  });
 
+
+// PLOT/GRAPH //
 
 // Set dimensions and margins for the chart
 
