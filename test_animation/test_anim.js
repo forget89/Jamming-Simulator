@@ -39,7 +39,7 @@ d3.csv("/test_animation/jdi_data_daily.csv").then(function (data) {
     rect.transition()
         .attr("height", function() {
             return +data[0].oil;})
-        .duration(1000) 
+        .duration(0) 
         .delay(500); 
 
     svg.append("g")
@@ -48,11 +48,18 @@ d3.csv("/test_animation/jdi_data_daily.csv").then(function (data) {
         .attr("y", 0.5)
         .attr("width", 17)
         .attr("height", 605)
- 
+        // .attr("height", function() {return +data[0].oil;})
         .attr("fill","#292e3c")
         .attr("stroke", "white")
         .attr("stroke-opacity", 0.72);
-
+    svg.append("g")
+        .append("rect")
+        .attr("x", 104.5)
+        .attr("y", 552.5)
+        .attr("width", 19)
+        .attr("height", 47)
+        .attr("fill","#3A3E4A")
+        .attr("stroke", "white");
 });
 
 d3.csv("/test_animation/jdi_data_daily2.csv").then(function (data) {
@@ -81,27 +88,17 @@ d3.csv("/test_animation/jdi_data_daily2.csv").then(function (data) {
 
     var rect1 = chart.append("rect")
         .attr("x", 107)
-        .attr("y", 605) 
+        .attr("y", 2) 
         .attr("width", 13.5)
         .attr("height", 0)
         .style("fill", "GhostWhite");
 
     rect1.transition()
-    .attr("y", function() {
-        return 605 - +data[0].oil;
-    })
         .attr("height", function() {
             return +data[0].oil;})
         .duration(1000) 
         .delay(1000); 
-    svg.append("g")
-        .append("rect")
-        .attr("x", 104.5)
-        .attr("y", 552.5)
-        .attr("width", 19)
-        .attr("height", 47)
 
-        .attr("stroke", "white");
 });
 // <path d="M106.5 0.5H121.5V605.5H106.5V0.5Z" stroke="white" stroke-opacity="0.72"/>
 // <rect x="104.5" y="552.5" width="19" height="47" fill="#3A3E4A" stroke="white"/>
