@@ -49,7 +49,7 @@ body{
     margin-left: 20px;
 }
 
-.headerContainer svg{
+.headerContainer i{
     cursor: pointer;
 }
 

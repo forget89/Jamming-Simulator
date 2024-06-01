@@ -72,36 +72,36 @@
                 <span class="text nav-text" >Версия 3.01.2024</span>
             </footer>
     </nav>
+
+    <!-- изменено -->
+    <script defer src="/reagent_page/reagent_page.js"></script>
+    <!-- изменения кончились-->
+
     <script defer src="/template_page/template_page.js"></script>
     <!-- header and sidebar ended-->
+    <!-- изменено -->
     <main class="main__content">
         <section class="content__search">
-            <div>
-                <div class="search-header"> 
-                    <div class="search-box">  <!-- косяк с иконками, переносятся при масштабировании посмоотреть шаблоны исправить-->
-                        <i class="bx bx-search icon" ></i>
-                        <input type="text" name="search-box" id="" placeholder="Поиск">
-                        <i class="bx bx-plus icon" ></i>
-                    </div>
+                <div class="tabs-wrapper">
+                    <div class="tabs">
+                        <span class="tab">
+                            <i class="bx bx-chevron-down"></i>
+                            Системные</span>
                 </div>
-                <div class="search-info"> <!-- сделать выподающий список -->
-                    <div class="search-info-first">
-                        <i class="bx bx-chevron-down"></i>
-                        Системные
+                <div class="tabs-items">
+                    <div class="item">
+                        <span class="btn" data-target="CaCl">CaCl</span>
+                        <span class="btn" data-target="CaЖГ">CaЖГ</span>
+                        <span class="btn" data-target="KCl">KCl</span>
                     </div>
-                    <div class="search-info-first">
-                        <i class="bx bx-chevron-down"></i>
-                        База солей
-                    </div>
-                    <div class="search-info-first">
-                        <i class="bx bx-chevron-down"></i>
-                        Пользовательские
-                    </div>
-                </div> 
-
+                <div class="custom">
+                    <i class="bx bx-chevron-down"></i>
+                    Пользовательские
+                </div>
             </div>
-            
+            </div>
         </section>
+        <!-- измения кончились -->
         <section class="content__table">
             <p class="header">Расходная норма</p>
             <p class="header" style="color: rgba(255, 255, 255, 0.64);">CaCl / Данные по приготовлению</p>
@@ -253,9 +253,10 @@
                 </table>
             </div>
         </section>
+        <!-- изменено -->
         <section class="content__features">
             <p class="header">Свойства жидкости</p>
-            <table>
+            <table id="CaCl" class="hidden">
                 <tr style="background: #292e3c;">
                     <td>
                         Название
@@ -277,35 +278,112 @@
                         Мин. плотность ЖГ, г/см³
                     </td>
                     <td>
-                        <p>1,01</p>
+                        <p>миллиард</p>
                     </td>
                 </tr>
                 <tr style="background: #363A47;">
                     <td>
-                        Макс. плотность ЖГ, г/см³
+                        еще какая то инфа 1
                     </td>
                     <td>
-                        <p>1,30</p>
+                        <p>какие то числа 1</p>
                     </td>
                 </tr>
                 <tr style="background: #292e3c;">
                     <td>
-                        Стоимость реаг. руб/кг
+                        еще какая то инфа 1
                     </td>
                     <td>
-                        <p>500</p>
+                        <p>какие то числа 1</p>
+                    </td>
+                </tr>
+            </table>
+            <table id="CaЖГ" class="hidden">
+                <tr style="background: #292e3c;">
+                    <td>
+                        Название
+                    </td>
+                    <td>
+                        <p>CaЖГ</p>
                     </td>
                 </tr>
                 <tr style="background: #363A47;">
                     <td>
-                        Примечание
+                        Описание
                     </td>
                     <td>
-                        <p>-</p>
+                        <p>Соль</p>
+                    </td>
+                </tr>
+                <tr style="background: #292e3c;">
+                    <td>
+                        Мин. плотность ЖГ, г/см³
+                    </td>
+                    <td>
+                        <p>миллион</p>
+                    </td>
+                </tr>
+                <tr style="background: #363A47;">
+                    <td>
+                        еще какая то инфа 2
+                    </td>
+                    <td>
+                        <p>какие то числа 2</p>
+                    </td>
+                </tr>
+                <tr style="background: #292e3c;">
+                    <td>
+                        еще какая то инфа 2
+                    </td>
+                    <td>
+                        <p>какие то числа 2</p>
+                    </td>
+                </tr>
+            </table>
+            <table id="KCl" class="hidden">
+                <tr style="background: #292e3c;">
+                    <td>
+                        Название
+                    </td>
+                    <td>
+                        <p>KCl</p>
+                    </td>
+                </tr>
+                <tr style="background: #363A47;">
+                    <td>
+                        Описание
+                    </td>
+                    <td>
+                        <p>Соль</p>
+                    </td>
+                </tr>
+                <tr style="background: #292e3c;">
+                    <td>
+                        Мин. плотность ЖГ, г/см³
+                    </td>
+                    <td>
+                        <p>52 это второй</p>
+                    </td>
+                </tr>
+                <tr style="background: #363A47;">
+                    <td>
+                        еще какая то инфа 3
+                    </td>
+                    <td>
+                        <p>какие то числа 3</p>
+                    </td>
+                </tr>
+                <tr style="background: #292e3c;">
+                    <td>
+                        еще какая то инфа 3
+                    </td>
+                    <td>
+                        <p>какие то числа 3</p>
                     </td>
                 </tr>
             </table>
         </section>
+        <!-- изменения кончились -->
     </main>
 </body>
 </html>

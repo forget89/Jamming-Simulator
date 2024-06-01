@@ -14,6 +14,21 @@ document.querySelectorAll('.tabs-wrapper').forEach((e) => {
    }
  });
 
+const toggleIcon = document.getElementById('toggleIcon2');
+
+toggleIcon.addEventListener('click', () => {
+  const content = document.querySelector('section[name="graph"]');
+
+  if (content.classList.contains('closed')) {
+    content.classList.remove('closed');
+    toggleIcon.classList.remove('bx-left-arrow-alt');
+    toggleIcon.classList.add('bx-right-arrow-alt');
+  } else {
+    content.classList.add('closed');
+    toggleIcon.classList.remove('bx-right-arrow-alt');
+    toggleIcon.classList.add('bx-left-arrow-alt');
+  }
+}); 
 
 // PLOT/GRAPH //
 
