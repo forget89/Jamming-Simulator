@@ -179,3 +179,8 @@ button:hover{
     margin-top: auto;
     margin-bottom: 40px;
 }
+
+.closed{
+    display: none;
+    transition: all 0.5s ease;
+}

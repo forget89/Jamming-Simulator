@@ -38,6 +38,3 @@ document.querySelectorAll('.tabs-wrapper').forEach((e) => {
         }
     }
 });
-
-
-console.log('sds')

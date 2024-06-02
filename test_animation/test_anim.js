@@ -270,24 +270,7 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
         .style("font-size", "12px") 
         .style("color", "white")
 
-    var yScaleHek = d3.scaleLinear()
-        .domain([d3.min(data, function(d) { return +d.height; }), d3.max(data, function(d) { return +d.hek; })])
-        .range([margin.top+maxHkp, margin.top+maxHkp+maxHek]);
 
-    var y_axisHek = d3.axisRight()
-        .scale(yScaleHek)
-        .ticks(2, "f")
-
-    svg.append("g") // высота скважины 
-        .attr("transform", "translate(150, 0)")
-        .call(y_axisHek)
-        .selectAll("text")
-            .attr("dx", ".1em")
-            .attr("dy", ".3em")
-            .style("font-family", "Montserrat")  
-            .attr("transform", "rotate(0)" )
-        .style("font-size", "12px") 
-        .style("color", "white")
 
     for (var i = 0; i < data.length; i++) {
         // console.log(data[i].hnkt)
@@ -313,7 +296,7 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
         
     svg.append("rect")
         .attr("x", 60)
-        .attr("y", margin.top)
+        .attr("y", 0)
         .attr("width", 30)
         .attr("height", function(){
             return data[i].hnkt; 
@@ -325,7 +308,7 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
         .attr("y", 0)
         .attr("width", 2)
         .attr("height", function(){
-            return margin.top + maxHkpjg; 
+            return  maxHkpjg; 
         })
         .style("fill", "white")
 
@@ -334,7 +317,7 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
         .attr("y", 0)
         .attr("width", 2)
         .attr("height", function(){
-            return margin.top + maxHkpjg; 
+            return  maxHkpjg; 
         })
         .style("fill", "white")
     
@@ -343,7 +326,7 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
         .attr("y", 0)
         .attr("width", 2)
         .attr("height", function(){
-            return margin.top + maxHkpjg; 
+            return  maxHkpjg; 
         })
         .style("fill", "white")
 
@@ -352,7 +335,7 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
         .attr("y", 0)
         .attr("width", 2)
         .attr("height", function(){
-            return margin.top + maxHkpjg; 
+            return  maxHkpjg; 
         })
         .style("fill", "white")    
     }
@@ -366,32 +349,32 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
 
     svg.append("rect")
     .attr("x", 0)
-    .attr("y", margin.top + maxHkpjg - 2)
+    .attr("y",  maxHkpjg )
     .attr("width", 152)
     .attr("height", 3)
     .style("fill", "white")
 
     svg.append("rect")
     .attr("x", 30)
-    .attr("y", margin.top + maxHkpjg)
+    .attr("y",  maxHkpjg)
     .attr("width", 92)
-    .attr("height", 70)
+    .attr("height", 1)
     .style("fill", "gray")
 
-        for (var i = 0; i < data.length; i++) {
-            var delay = i * 10000; // Задержка для каждого прямоугольника
-            
+        for (var i = 1; i < data.length; i++) {
+            var delay1 = i * 10; // Задержка для каждого прямоугольника
+            var delay2 = i * 100;
             // Создаем прямоугольник
             var rectAnimFirst = svg.append("rect")
                 .attr("x", 60)
                 .attr("y", function() {
-                    return margin.top + maxHkpjg - data[i].hnktjg ;})
+                    return  maxHkpjg - data[i].hnktjg ;})
                 .attr("width", 30)
                 .attr("height", 0) // Начальная высота 0
                 // .style("stroke", "black")
                 .style("fill", "rgb(100, 121, 145)")
                 .transition()
-                .delay(delay) // Применяем задержку
+                .delay(delay2) // Применяем задержку
                 .duration(500) // Продолжительность анимации
                 .attr("height", function() {
                     return data[i].hnktjg; // Изменяем высоту на значение из данных
@@ -400,15 +383,15 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
             var rectAnimSmall = svg.append("rect")
                 .attr("x", 30)
                 .attr("y", function() {
-                    return margin.top+maxHkpjg ; // Начальная позиция по оси Y
+                    return maxHkpjg ; // Начальная позиция по оси Y
                 })
                 .attr("width", 90)
                 .attr("height", 0) // Начальная высота 0
                 .style("fill", "rgb(100, 121, 145)")
                 // .style("stroke", "black")
                 .transition()
-                .delay(delay) // Применяем задержку
-                .duration(100) // Продолжительность анимации
+                .delay(delay2) // Применяем задержку
+                .duration(500) // Продолжительность анимации
                 .attr("height", function() {
                     return data[i].hekjg; // Изменяем высоту на значение из данных
                 })
@@ -418,13 +401,13 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
             var rectAnimSecond = svg.append("rect")
                 .attr("x", 30)
                 .attr("y", function() {
-                    return margin.top; // Начальная позиция по оси Y
+                    return ; // Начальная позиция по оси Y
                 })
                 .attr("width", 30)
                 .attr("height", 0) // Начальная высота 0
                 .style("fill", "rgb(100, 121, 145)")
                 .transition()
-                .delay(delay) // Применяем задержку
+                .delay(delay1) // Применяем задержку
                 .duration(500) // Продолжительность анимации
                 .attr("height", function() {
                     return data[i].hkpjg; // Изменяем высоту на значение из данных
@@ -433,13 +416,13 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
             var rectAnimSecond = svg.append("rect")
                 .attr("x", 90)
                 .attr("y", function() {
-                    return margin.top; // Начальная позиция по оси Y
+                    return ; // Начальная позиция по оси Y
                 })
                 .attr("width", 30)
                 .attr("height", 0) // Начальная высота 0
                 .style("fill", "rgb(100, 121, 145)")
                 .transition()
-                .delay(delay) // Применяем задержку
+                .delay(delay1) // Применяем задержку
                 .duration(500) // Продолжительность анимации
                 .attr("height", function() {
                     return data[i].hkpjg; // Изменяем высоту на значение из данных
