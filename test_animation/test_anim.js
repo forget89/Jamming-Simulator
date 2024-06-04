@@ -276,7 +276,7 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
         // console.log(data[i].hnkt)
     svg.append("rect")
         .attr("x", 30)
-        .attr("y", margin.top)
+        .attr("y", 0)
         .attr("width", 90)
         .attr("height", function(){
             return data[i].hkp; 
@@ -286,7 +286,7 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
     svg.append("rect")
         .attr("x", 30)
         .attr("y", function(){
-            return margin.top+maxHkp;
+            return maxHkp;
         })
         .attr("width", 90)
         .attr("height", function(){
@@ -335,7 +335,7 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
         .attr("y", 0)
         .attr("width", 2)
         .attr("height", function(){
-            return  maxHkpjg; 
+            return  maxHkpjg+maxHek; 
         })
         .style("fill", "white")    
     }
@@ -358,12 +358,12 @@ d3.csv("/test_animation/levelwithoutUReserve.csv").then(function (data) {
     .attr("x", 30)
     .attr("y",  maxHkpjg)
     .attr("width", 92)
-    .attr("height", 1)
+    .attr("height", 3)
     .style("fill", "gray")
 
         for (var i = 1; i < data.length; i++) {
-            var delay1 = i * 10; // Задержка для каждого прямоугольника
-            var delay2 = i * 100;
+            var delay1 = i * 100000; // Задержка для каждого прямоугольника
+            var delay2 = i * 300000;
             // Создаем прямоугольник
             var rectAnimFirst = svg.append("rect")
                 .attr("x", 60)
