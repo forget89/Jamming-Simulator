@@ -14,21 +14,55 @@ document.querySelectorAll('.tabs-wrapper').forEach((e) => {
    }
  });
 
-const toggleIcon = document.getElementById('toggleIcon2');
+const toggleIcon1 = document.getElementById('toggleIcon1');
 
-toggleIcon.addEventListener('click', () => {
-  const content = document.querySelector('section[name="graph"]');
+toggleIcon1.addEventListener('click', () => {
+  const content1 = document.querySelector('section[name="sect1"]');
 
-  if (content.classList.contains('closed')) {
-    content.classList.remove('closed');
-    toggleIcon.classList.remove('bx-left-arrow-alt');
-    toggleIcon.classList.add('bx-right-arrow-alt');
+  if (content1.classList.contains('closed1')) {
+    content1.classList.remove('closed1');
+    toggleIcon1.classList.remove('bx-left-arrow-alt');
+    toggleIcon1.classList.add('bx-right-arrow-alt');
   } else {
-    content.classList.add('closed');
-    toggleIcon.classList.remove('bx-right-arrow-alt');
-    toggleIcon.classList.add('bx-left-arrow-alt');
+    content1.classList.add('closed1');
+    toggleIcon1.classList.remove('bx-right-arrow-alt');
+    toggleIcon1.classList.add('bx-left-arrow-alt');
   }
 }); 
+
+const toggleIcon2 = document.getElementById('toggleIcon2');
+
+toggleIcon2.addEventListener('click', () => {
+  const content2 = document.querySelector('section[name="sect2"]');
+
+  if (content2.classList.contains('closed2')) {
+    content2.classList.remove('closed2');
+    toggleIcon2.classList.remove('bx-left-arrow-alt');
+    toggleIcon2.classList.add('bx-right-arrow-alt');
+  } else {
+    content2.classList.add('closed2');
+    toggleIcon2.classList.remove('bx-right-arrow-alt');
+    toggleIcon2.classList.add('bx-left-arrow-alt');
+  }
+}); 
+
+const toggleIcon3 = document.getElementById('toggleIcon3');
+
+toggleIcon3.addEventListener('click', () => {
+  const content3 = document.querySelector('section[name="sect3"]');
+
+  if (content3.classList.contains('closed3')) {
+    content3.classList.remove('closed3');
+    toggleIcon3.classList.remove('bx-left-arrow-alt');
+    toggleIcon3.classList.add('bx-right-arrow-alt');
+  } else {
+    content3.classList.add('closed3');
+    toggleIcon3.classList.remove('bx-right-arrow-alt');
+    toggleIcon3.classList.add('bx-left-arrow-alt');
+  }
+}); 
+
+
 
 // PLOT/GRAPH //
 
